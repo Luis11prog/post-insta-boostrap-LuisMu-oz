@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .navbar-collapse .dropdown-menu {
+      position: static !important;
+      float: none;
+      width: 100%;
+      margin-top: 0.5rem;
+      border: none;
+      box-shadow: none;
+    }
+
+    .navbar-collapse .dropdown-toggle::after {
+      display: inline-block;
+      margin-left: 0.255em;
+      vertical-align: 0.255em;
+      content: "";
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0;
+      border-left: 0.3em solid transparent;
+    }
+
+    .navbar-collapse .ms-auto {
+      margin-left: auto !important;
+      margin-right: 0 !important;
+      align-items: flex-end !important;
+    }
+
+    .navbar-collapse .ms-auto .btn,
+    .navbar-collapse .ms-auto .dropdown {
+      width: auto !important;
+      align-self: flex-end;
+    }
+
+    .modal-dialog-centered {
+      display: flex;
+      align-items: center;
+      min-height: calc(100% - 1rem);
+    }
+
+    .modal-content {
+      border-radius: 8px;
+    }
+
+    .modal-header {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .modal-header .btn-close {
+      font-size: 1.25rem;
+    }
+
+    .modal-title {
+      font-weight: 600;
+    }
+
+    .modal-body .form-label {
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .modal-body .form-control {
+      border-radius: 4px;
+      resize: none;
+    }
+
+    .modal-body .icon-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      color: #888;
+    }
+
+    .modal-body .icon-buttons i {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-body .icon-buttons i:hover {
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <i class="fa-brands fa-instagram me-1"> Instagram</i>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <div class="ms-auto d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3 mt-3 mt-lg-0">
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#newPostModal">Create a
+            new post</button>
+          <div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog modal-dialog-centered">
+              <form class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title w-100 text-center" id="newPostModalLabel">Create a new post!</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label for="postCaption" class="form-label">Caption:</label>
+                    <textarea class="form-control" id="postCaption" rows="3"
+                      placeholder="Add the caption of your post here"></textarea>
+                  </div>
+
+                  <div class="icon-buttons">
+                    <i class="fa-solid fa-camera"></i> <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                </div>
+                <div class="modal-footer justify-content-end"> <button type="button" class="btn btn-secondary me-2"
+                    data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-success">Publish</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="nav-item dropdown">
+            <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+              <i class="fa-solid fa-gear"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Accesibility</a></li>
+              <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab"
+        aria-controls="home" aria-selected="true"><i class="fa-solid fa-table-cells"></i></< /button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab"
+        aria-controls="profile" aria-selected="false"><i class="fa-solid fa-square"></i></button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active mb-2" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="row g-2 mb-2 px-2 my-2 " style="display: ;">
+        <div class="col-4">
+          <div class="grid-img-container">
+            <img
+              src="https://images.pexels.com/photos/8142734/pexels-photo-8142734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              class="img-fluid" alt="Amor">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="grid-img-container">
+            <img src="https://m.media-amazon.com/images/I/61pMGZ6cNxL._UXNaN_FMjpg_QL85_.jpg" class="img-fluid"
+              alt="Carnavales">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="grid-img-container">
+            <img src="https://i.etsystatic.com/27350252/r/isla/0453d5/46082110/isla_500x500.46082110_2ob8h61m.jpg"
+              class="img-fluid" alt="Catrina">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="grid-img-container">
+            <img src="https://i.pinimg.com/564x/7f/83/62/7f83628ed3275254c35f779bdbcce252.jpg" class="img-fluid"
+              alt="Gatito">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="grid-img-container">
+            <img src="https://media.smartbox.com/pim/1000002764373738855129.jpg" class="img-fluid" alt="Puenting">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="grid-img-container">
+            <img src="https://i.pinimg.com/564x/69/f4/4f/69f44ffc8620d740e7a8ef7f62dc50a5.jpg" class="img-fluid"
+              alt="Perrito">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="grid-img-container">
+            <img src="https://m.media-amazon.com/images/I/61w7TUSwAkL.jpg" class="img-fluid" alt="Amanecer">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="grid-img-container">
+            <img src="https://i.pinimg.com/564x/bc/c8/38/bcc8384e4206621f5e6ca62a53ce0f06.jpg" class="img-fluid"
+              alt="Paracaidsmo">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="grid-img-container">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Bruce_McCandless_II_during_EVA_in_1984.jpg/500px-Bruce_McCandless_II_during_EVA_in_1984.jpg"
+              class="img-fluid" alt="Astonauta">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane fade my-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="container" style="display: block;">
+      <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-6">
+          <div class="card mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <span>¡El Amor!</span>
+              <small>11/01/2025</small>
+            </div>
+            <img
+              src="https://images.pexels.com/photos/8142734/pexels-photo-8142734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              class="card-img-top" alt="Amor-corazon-al-amanecer">
+            <div class="card-body">
+              <p class="card-text"><strong>400 Me gusta <i class="fa-regular fa-thumbs-up"></i></strong></p>
+              <p class="card-text">"Eres esa calma que llegó después de muchas tormentas. No eres perfecto, ni yo
+                tampoco, pero juntos nos entendemos como si el amor hablara en nuestro idioma." ✨</p>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <span>Carnaval Ecuador</span>
+              <small>15/02/2025</small>
+            </div>
+            <img src="https://m.media-amazon.com/images/I/61pMGZ6cNxL._UXNaN_FMjpg_QL85_.jpg" class="card-img-top"
+              alt="Foto Carnaval">
+            <div class="card-body">
+              <p class="card-text"><strong>233 Me gusta <i class="fa-regular fa-thumbs-up"></i></strong></p>
+              <p class="card-text">🎭 Carnaval en Ecuador: color, tradición y alegría 🇪🇨
+                Cada febrero, Ecuador se llena de música, danzas y juegos con agua, espuma y pintura. Desde las
+                comparsas en Guaranda hasta los festejos ancestrales en Ambato y el juego popular en la Costa, el
+                Carnaval es una mezcla única de cultura y celebración.
+                ¡Una fiesta que une al país con ritmo, sabor y tradición! 🎉🌈</p>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <span>La Catrina</span>
+              <small>01/10/2025</small>
+            </div>
+            <img src="https://i.etsystatic.com/27350252/r/isla/0453d5/46082110/isla_500x500.46082110_2ob8h61m.jpg"
+              class="card-img-top" alt="Foto Catrina">
+            <div class="card-body">
+              <p class="card-text"><strong>545 Me gusta <i class="fa-regular fa-thumbs-up"></i></strong></p>
+              <p class="card-text">En México, hasta la muerte se viste de gala. Así es La Catrina. 💀✨</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
