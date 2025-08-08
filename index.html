@@ -9,93 +9,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    .navbar-collapse .dropdown-menu {
-      position: static !important;
-      float: none;
-      width: 100%;
-      margin-top: 0.5rem;
-      border: none;
-      box-shadow: none;
-    }
-
-    .navbar-collapse .dropdown-toggle::after {
-      display: inline-block;
-      margin-left: 0.255em;
-      vertical-align: 0.255em;
-      content: "";
-      border-top: 0.3em solid;
-      border-right: 0.3em solid transparent;
-      border-bottom: 0;
-      border-left: 0.3em solid transparent;
-    }
-
-    .navbar-collapse .ms-auto {
-      margin-left: auto !important;
-      margin-right: 0 !important;
-      align-items: flex-end !important;
-    }
-
-    .navbar-collapse .ms-auto .btn,
-    .navbar-collapse .ms-auto .dropdown {
-      width: auto !important;
-      align-self: flex-end;
-    }
-
-    .modal-dialog-centered {
-      display: flex;
-      align-items: center;
-      min-height: calc(100% - 1rem);
-    }
-
-    .modal-content {
-      border-radius: 8px;
-    }
-
-    .modal-header {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .modal-header .btn-close {
-      font-size: 1.25rem;
-    }
-
-    .modal-title {
-      font-weight: 600;
-    }
-
-    .modal-body .form-label {
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-    }
-
-    .modal-body .form-control {
-      border-radius: 4px;
-      resize: none;
-    }
-
-    .modal-body .icon-buttons {
-      display: flex;
-      gap: 15px;
-      margin-top: 10px;
-      color: #888;
-    }
-
-    .modal-body .icon-buttons i {
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    .modal-body .icon-buttons i:hover {
-      color: #555;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3 mb-2">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <i class="fa-brands fa-instagram me-1 text-primary"> Instagram</i>
@@ -106,7 +25,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarContent">
+      <div class="collapse navbar-collapse dropdown-end" id="navbarContent">
         <div class="ms-auto d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3 mt-3 mt-lg-0">
           <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#newPostModal">Create a
             new post</button>
@@ -167,14 +86,13 @@
         aria-controls="profile" aria-selected="false"><i class="fa-solid fa-square"></i></button>
     </li>
   </ul>
+
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active mb-2" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade show active mb-2 " id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-3 g-2 g-2 mb-2 px-2 my-2">
         <div class="col">
           <div class="grid-img-container">
-            <img
-              src="https://images.pexels.com/photos/8142734/pexels-photo-8142734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              class="img-fluid" alt="Amor">
+            <img src="https://m.media-amazon.com/images/I/61LwOQJBw4L.jpg" class="img-fluid" alt="Amor">
           </div>
         </div>
         <div class="col">
@@ -237,9 +155,8 @@
               <span>¡El Amor!</span>
               <small>11/01/2025</small>
             </div>
-            <img
-              src="https://images.pexels.com/photos/8142734/pexels-photo-8142734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              class="card-img-top" alt="Amor-corazon-al-amanecer">
+            <img src=https://m.media-amazon.com/images/I/61LwOQJBw4L.jpg class="card-img-top"
+              alt="Amor-corazon-al-amanecer">
             <div class="card-body">
               <p class="card-text"><strong>400 Me gusta <i class="fa-regular fa-thumbs-up"></i></strong></p>
               <p class="card-text">"Eres esa calma que llegó después de muchas tormentas. No eres perfecto, ni yo
